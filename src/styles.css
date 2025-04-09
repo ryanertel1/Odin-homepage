@@ -1,0 +1,60 @@
+body {
+    display: block;
+    margin: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transform-origin: 0;
+    transform: skewY(-10deg);
+    background-color: blue;
+    height: 25rem;
+    width: 100vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 100vw;
+    max-height: 700px;
+}
+
+.header-content {
+    min-width: none;
+    background-color: cornsilk;
+    padding: 1rem;
+    margin: 0;
+    max-width: 35rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.img-container {
+    position: relative;
+    min-width: 280px;
+    max-width: 400px;
+    display: flex;
+    flex-flow: column;
+    font-size: 1.8rem;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.img-subtext {
+    height: 60px;
+    width: 100%;
+    background-color: seagreen;
+    text-align: center;
+    vertical-align: center;
+    line-height: 60px;
+}
+
+.img-container > img {
+    min-width: 280px;
+}
