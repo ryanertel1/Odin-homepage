@@ -11,7 +11,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            filename: path.resolve(__dirname, './dist/index.html'),
+            template: path.resolve(__dirname, './src/index.html'),
         }),
     ],
     module: {
@@ -20,6 +21,19 @@ module.exports = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'img/[name].[hash:8][ext]',
+                },
+            },
         ],
     },
+    devServer: {
+        static: path.join(__dirname, 'assets'),
+        compress: true,
+        port: 3300,
+        hot: true,
+    }
 };

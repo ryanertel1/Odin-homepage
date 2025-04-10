@@ -79,32 +79,47 @@ header {
     float: right;
 }
 
-.about-links > a > svg {
+.about-links > a > svg,
+.contact-links > a > svg {
     height: 90%;
     margin-inline: 0.3rem;
 }
 
 .about-links > a > svg:focus,
-.about-links > a > svg:hover {
+.about-links > a > svg:hover,
+.contact-links > a > svg:focus,
+.contact-links > a > svg:hover {
     transform: scale(1.1);
     transition: transform 250ms;
 }
 
 footer {
+    background-color: var(--soft-green);
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 100vw;
+    padding: 3rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: row wrap;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
-footer::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    background-color: var(--soft-green);
-    height: 20rem;
-    width: 100vw;
+.contact-container {
+    flex: 1 0 40rem;
+    max-width: 25rem;
+    min-width: none;
+}
+
+.contact-links {
+    height: 2rem;
+    float: left;
+}
+
+footer > img {
+    min-width: 300px;
+    max-height: 300px;
 }
