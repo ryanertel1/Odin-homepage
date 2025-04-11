@@ -13,12 +13,14 @@
     --light-gray: #e2e2e2;
     --charcoal: #73787C;
     font: 1em "Funnel Sans";
+
+    display: block;
+    background-color: var(--light-gray);
 }
 
-body {
-    display: block;
+* {
     margin: 0;
-    background-color: var(--light-gray);
+    box-sizing: border-box;
 }
 
 a {
@@ -93,9 +95,27 @@ header {
     transition: transform 250ms;
 }
 
+.project-section {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5rem;
+    padding-inline: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem;
+    grid-auto-flow: dense;
+    align-items: flex-start;
+    max-width: 1600px;
+}
+
+.project-container > img {
+    width: 100%;
+}
+
 footer {
     background-color: var(--soft-green);
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     width: 100vw;
